@@ -1,7 +1,7 @@
 import ollama
 model="llama3.2:latest"
 print(f"Hello this is {model}\n")
-assistant_type=input("Whome should i pretend like:(Doctor/Friend...) ")
+assistant_type=input("Whom should i pretend like:(Doctor/Friend...) ")
 
 messages=[
     {
