@@ -1,56 +1,86 @@
-Local AI Chatbot
+Ollama Roleplay Chatbot
 
-A simple Python chatbot built using LangChain and Ollama. Choose an assistant personality, such as a friend or doctor, and chat with a locally running LLM.
+A simple, interactive AI chatbot built using Python, LangChain, Ollama, and Llama 3.2. It allows users to choose a role for the AI, such as a doctor, friend, or teacher, and interact with it through a command-line interface.
+
+The chatbot uses LangChain to manage conversation messages and maintain chat history during execution, enabling context-aware responses.
 
 Features
 
-- 🤖 Choose an assistant personality.
-- 💬 Maintains conversation history during the session.
-- 🖥️ Runs locally using Ollama.
-- 🔗 Uses LangChain to manage messages and interact with the model.
+- 🎭 Custom AI Roles — Choose how the AI should behave by specifying a role.
+- 🧠 Context-Aware Conversations — Maintains user messages and AI responses throughout the session.
+- 💻 Local AI Execution — Runs Llama 3.2 locally using Ollama.
+- 🔗 LangChain Integration — Uses LangChain message classes and ChatOllama to interact with the model.
+- 💬 Concise Responses — Uses system prompting to encourage short, meaningful answers.
+- 🔄 Interactive Chat — Continue conversations until you type bye.
 
 Tech Stack
 
-- Python
-- LangChain
-- Ollama
-- Llama 3.2
+- Language: Python
+- LLM Framework: LangChain
+- AI Runtime: Ollama
+- Language Model: Llama 3.2
+- Interface: Command-Line Interface (CLI)
 
-Installation
+Prerequisites
 
-1. Install Ollama
+Before running the project, ensure you have:
 
-Download Ollama from ollama.com.
+- Python 3.9 or later
+- Ollama installed
+- The Llama 3.2 model downloaded
 
-2. Download the model
+Installation and Setup
+
+1. Download the model
 
 ollama pull llama3.2
 
-3. Create a virtual environment
+2. Create a virtual environment
 
 python3 -m venv .venv
 source .venv/bin/activate
 
-4. Install dependencies
+3. Install the required Python libraries
 
 pip install langchain-ollama langchain-core
 
+4. Run the chatbot
+
+python bot.py
+
 Usage
 
-Run the Python script:
+1. Start the application.
+2. Enter the role you want the AI to adopt, such as Friend, Teacher, or Doctor.
+3. Type your messages and interact with the chatbot.
+4. The chatbot uses previous messages to maintain conversational context.
+5. Type bye to end the conversation.
 
-python hello.py
+Project Structure
 
-Choose an assistant personality when prompted:
-
-Whom should I pretend like: (Doctor/Friend/...)
-
-Start chatting with the assistant. Type bye to exit.
+ollama-roleplay-chatbot/
+├── bot.py # Main chatbot implementation
+├── README.md # Project documentation
+└── .venv/ # Python virtual environment
 
 Memory
 
-The chatbot maintains conversation history in memory while the program is running. Previous conversations are not saved after the program terminates.
+The chatbot maintains conversation history using LangChain’s message classes. This allows the AI to refer to earlier messages during the current session.
 
-License
+Note: Conversation history is stored temporarily in memory and is not saved after the program terminates.
 
-This project is open-source and available for learning and experimentation.
+Future Improvements
+
+- Add a graphical user interface.
+- Allow users to switch roles during conversations.
+- Implement persistent chat history using SQLite or JSON.
+- Add error handling for model and connection issues.
+- Introduce conversation summarization for longer sessions.
+
+👨‍💻 Author
+
+Puneeth J
+
+⸻
+
+Built with Python, LangChain, and Ollama to explore local LLM integration and conversational AI.
